@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/APPWeb20DeFeb.sln
+/APPWeb20DeFeb/APPWeb20DeFeb.csproj

@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "PasarListaPrincipal";  // Título de la página
+}
+
+<h2>Pasar Lista</h2>
+
+<main aria-labelledby="title">
+    <div class="container mt-4">
+        <h2 class="text-center">Lista de Asistencia</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="/Home/KeepList" method="post">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Numero de control</th>
+                                <th>Presente</th>
+                                <th>NoPresente</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in ViewBag.ListaPase)
+                            {
+                                <tr>
+                                    <td>@item.Nombre</td>  <!-- Mostrar nombre del alumno -->
+                                    <td>@item.ID</td>   <!-- Mostrar grupo del alumno -->
+                                    <td><input type="checkbox" class="form-check-input" name="seleccionados" value="@item.Nombre"></td>
+                                     <td><input type="checkbox" class="form-check-input" name="Nseleccionados" value="@item.Nombre"></td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                    <button type="submit" class="btn btn-primary w-100">Guardar Asistencia</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Menu";
+}
+<body>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header text-center bg-danger text-white">
+                <h3>Menu</h3>
+            </div>
+            <div class="card-body text-center">
+                <h4>Elige un salón</h4>
+                <form action="PasarALista" method="post">
+                    <select class="form-select mt-3" id="salonSelect" name="salonSeleccionado">
+                        <option value="">Selecciona un salón</option>
+                        @if (ViewBag.Salones != null)
+                        {
+                            foreach (var item in ViewBag.Salones)
+                            {
+                                <option value="@item.Text">@item.Text</option>
+                            }
+                        }
+                    </select>
+
+
+                    <button class="btn btn-danger mt-3">Aceptar</button>
+                </form>
+                <form action="ViewImprimir">
+                    <button  class="btn btn-danger m-3" >Imprimir</button>
+                </form>
+               
+            </div>
+
+            
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
